@@ -1,0 +1,29 @@
+p {
+	font-family: sans-serif;
+	font-size: 4vh;
+}
+img {
+	width: 30vw
+}
+button {
+	font-size: 4vh;
+	padding: .5em;
+	border-radius: 1em;
+	margin: .2em;
+}
+#mewtwo {
+	background-color: #875575;
+	color: white;
+}
+#pikachu {
+	background-color: #f4dc26;
+	color: black;
+}
+#charizard {
+	background-color: #e14318;
+	color: white;
+}
+#mew {
+	background-color: #f7b8cf;
+	color: black;
+}
