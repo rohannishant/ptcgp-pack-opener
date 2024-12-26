@@ -16,8 +16,9 @@ function openPack(name) {
 	}
 
 	const packRarity = Math.random() * 100;
+	let rare = forceRarePack || packRarity < .05
 
-	if (!forceRarePack && packRarity > .05) {
+	if (!rare) {
 		// cards 1-3
 		for (let i = 0; i < 3; i++) {
 			getOfRarity("Common");
@@ -146,7 +147,7 @@ function openPack(name) {
 		}
 	}
 
-	return pack;
+	return [pack, rare];
 }
 
 function showPack(pack) {
@@ -157,11 +158,11 @@ function showPack(pack) {
 	let packNo = 0 + localStorage.getItem("packNo");
 	if (isNaN(packNo)) packNo = 0;
 	packNo++;
-	p.innerHTML =`pack no. ${packNo}`;
+	p.innerHTML =`${pack[1] ? 'RARE! ' : ''}pack no. ${packNo}`;
 	viewer.appendChild(p);
 	localStorage.setItem("packNo", packNo.toString());
 
-	pack.forEach(card => {
+	pack[0].forEach(card => {
 		let img = document.createElement("img");
 		img.src = card.image;
 		viewer.appendChild(img);
