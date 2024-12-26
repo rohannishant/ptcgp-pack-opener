@@ -103,21 +103,43 @@ function openPack(name) {
 		for (let i = 0; i < 5; i++) {
 			let n = Math.random() * 100;
 
-			if (n < 42.105) {
-				getOfRarity("Full Art");
-			}
-			else {
-				n -= 42.105;
-				if (n < 47.368) {
-					getOfRarity("Full Art EX/Support");
+			if (name == "Mythical Island") {
+				if (n < 33.333) {
+					getOfRarity("Full Art");
 				}
 				else {
-					n -= 47.368;
-					if (n < 5.263) {
-						getOfRarity("Immersive");
+					n -= 33.333;
+					if (n < 55.555) {
+						getOfRarity("Full Art EX/Support");
 					}
 					else {
-						getOfRarity("Gold Crown");
+						n -= 55.555;
+						if (n < 5.555) {
+							getOfRarity("Immersive");
+						}
+						else {
+							getOfRarity("Gold Crown");
+						}
+					}
+				}
+			}
+			else {
+				if (n < 42.105) {
+					getOfRarity("Full Art");
+				}
+				else {
+					n -= 42.105;
+					if (n < 47.368) {
+						getOfRarity("Full Art EX/Support");
+					}
+					else {
+						n -= 47.368;
+						if (n < 5.263) {
+							getOfRarity("Immersive");
+						}
+						else {
+							getOfRarity("Gold Crown");
+						}
 					}
 				}
 			}
