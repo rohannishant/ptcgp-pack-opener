@@ -6,7 +6,7 @@ function randomInteger(min, max) {
 }
 
 function openPack(name) {
-	const cards = data.filter(card => card.pack == name || card.rarity == "Gold Crown");
+	const cards = data.filter(card => card.pack == name || (name != "Mythical Island" && card.rarity == "Gold Crown" && card.pack == "Mewtwo"));
 	let pack = [];
 
 	const getOfRarity = (rarity) => {
