@@ -164,7 +164,8 @@ function showPack(pack) {
 
 	pack[0].forEach(card => {
 		let img = document.createElement("img");
-		img.src = card.image.split("/").splice(-1, 0, "cards").join("/");
+		let imgSrc = card.image.split("/").toSpliced(-1, 0, "cards").join("/");
+		img.src = imgSrc;
 		viewer.appendChild(img);
 	})
 }
